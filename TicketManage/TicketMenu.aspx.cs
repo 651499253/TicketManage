@@ -17,19 +17,25 @@ namespace TicketManage
         {
             if (!this.IsPostBack)
             {
-                if (Session["UserId"] != null)
-                {
-                    string UserId = Session["UserId"].ToString();
+                //if (Session["UserId"] != null)
+                //{
+                    //string UserId = Session["UserId"].ToString();
                     BindDDLStartPlace();
                     BindDDLDestination();
                     BindDDLShipType();
                     //BindDDLSeatType();
-                }
-                else
-                {
-                    Response.Redirect("Login.aspx?url=" + Request.Url.ToString());
-                }
+                //}
+                //else
+                //{
+                //    Response.Redirect("Login.aspx?url=" + Request.Url.ToString());
+                //}
             }
+        }
+
+        public double CurrentOnePrice
+        {
+            get;
+            set;
         }
 
         //绑定出发地下拉框
@@ -82,6 +88,36 @@ namespace TicketManage
             DataTable dt = tickMenuBll.GetTicketByparmsAndShipName(StartPlace, Destination, startData, ShipTypeName);
             this.LVTicketList.DataSource = dt;
             this.LVTicketList.DataBind();
+            if (ShipTypeName == "大型游轮")
+            {
+
+                DataTable dtone = tickMenuBll.GetTicketByparmsAndShipName(StartPlace, Destination, startData, ShipTypeName);
+                if (dtone.Rows.Count > 0)
+                {
+                    CurrentOnePrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.5;
+                }
+            }
+            if (ShipTypeName == "快艇")
+            {
+
+                DataTable dtone = tickMenuBll.GetTicketByparmsAndShipName(StartPlace, Destination, startData, ShipTypeName);
+                if (dtone.Rows.Count > 0)
+                {
+                    CurrentOnePrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.2;
+                }
+            }
+            if (ShipTypeName == "普通游轮")
+            {
+
+                DataTable dtone = tickMenuBll.GetTicketByparmsAndShipName(StartPlace, Destination, startData, ShipTypeName);
+                if (dtone.Rows.Count>0)
+                {
+                    CurrentOnePrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.0;
+                }
+            }
+
+             
+
         }
 
         ////选择座位后触发事件
@@ -116,9 +152,15 @@ namespace TicketManage
                 return;
             }
 
-            DataTable dt = tickMenuBll.GetTicketByparm(StartPlace, Destination, startData);
+            string ShipTypeName = DDLShipType.SelectedItem.ToString();
+
+            DataTable dt = tickMenuBll.GetTicketByparmsAndShipName(StartPlace, Destination, startData, ShipTypeName);
+
+            
+            //DataTable dt = tickMenuBll.GetTicketByparm(StartPlace, Destination, startData);
             this.LVTicketList.DataSource = dt;
             this.LVTicketList.DataBind();
+            CurrentOnePrice =double.Parse(dt.Rows[0]["Price"].ToString())*1.5;
 
 
             //Response.Write(startData + StartPlace + Destination);

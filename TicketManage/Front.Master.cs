@@ -22,10 +22,10 @@ namespace TicketManage
                     DataTable dt = userInfoBll.GetUserInfo(UserId);
                     UserName = dt.Rows[0]["UserName"].ToString();
                 }
-                else
-                {
-                    Response.Redirect("Login.aspx?url=" + Request.Url.ToString());
-                }
+                //else
+                //{
+                //    Response.Redirect("Login.aspx?url=" + Request.Url.ToString());
+                //}
             }
             else
             {
@@ -35,10 +35,10 @@ namespace TicketManage
                     DataTable dt2 = userInfoBll.GetUserInfo(UserId2);
                     UserName = dt2.Rows[0]["UserName"].ToString();
                 }
-                else
-                {
-                    Response.Redirect("Login.aspx?url=" + Request.Url.ToString());
-                }
+                //else
+                //{
+                //    Response.Redirect("Login.aspx?url=" + Request.Url.ToString());
+                //}
             }
 
 
