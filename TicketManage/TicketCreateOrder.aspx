@@ -143,9 +143,9 @@
     </asp:Panel>
     <br />
     <hr />
-    <div>
+    <%--<div>
         <asp:Label ID="Label4" runat="server" Text="最终票价："></asp:Label><asp:Label ID="lbtotalPrice" runat="server" Text=""></asp:Label>
-    </div>
+    </div>--%>
     <div>
         <asp:Button ID="btnCreateTicket" runat="server" Text="确定购买" OnClick="btnCreateTicket_Click" />
     </div>
