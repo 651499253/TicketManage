@@ -63,7 +63,7 @@
                 <td><%# Eval("AchieveTime")%></td>
                 <td><%# Eval("TripTime")%></td>
                 <td><%# Eval("ShipTypeName")%></td>
-                <td><%# Eval("LevelOneSeatNum")%></td>
+                <td><%# Eval("LevelOneSeatNum")%> (¥<%=CurrentOnePrice %>)</td>
                 <td><%# Eval("LevelTwoSeatNum") %></td>               
                 <td><%# Eval("LevelNoSeatNum")%></td>
                 <td>
