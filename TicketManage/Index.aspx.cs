@@ -11,7 +11,10 @@ namespace TicketManage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
+            {
 
+            }
         }
 
         //protected void btnToTicketMenu_Click(object sender, EventArgs e)
