@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Front.master.cs" Inherits="TicketManage.Front" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="background-image: url('photos/beijing001.jpg'); height: 209px; width: 100%">
+            <div style="margin-left: 0px; margin-top: 5px">
+                <a href="Index.aspx">
+                    <img src="photos/logo.png" style="width: 217px; height: 73px;" />
+                </a>
+            </div>
+<%--            <div style="margin-left: 1000px">
+                您好：<%=UserName %> &nbsp 欢迎使用票务系统
+            </div>--%>
+            <div style="margin-top: 10px; margin-left: 90px; font-family: 幼圆; font-size: x-large; font-weight: bold; color: #FFCC66;">
+                <marquee behavior="alternate" direction="left" srollamount="10" style="height: 33px; width: 404px;">船票票务网欢迎您！</marquee>
+            </div>
+
+            <div style="margin-left: 210px; margin-top: 25px; color: #CC9900;">
+                <script type="text/javascript" runat="server">
+                    public string GetDate()
+                    {
+                        return DateTime.Now.ToShortDateString();
+                    }
+                </script>
+                当前系统日期：<%=GetDate () %>
+            </div>
+            <div style="margin-top: 15px; margin-left: 450px">
+                <a href="Register.aspx" style="font-family: 华文隶书; font-size: x-large; font-weight: normal; color: #FF0000; text-decoration: none;">注册</a>
+                <a href="Login.aspx" style="font-family: 华文隶书; font-size: x-large; font-weight: normal; color: #FF0000; text-decoration: none;">登录</a>
+            </div>
+
+
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <div style="background-image: url('photos/beijing2.jpg'); height: 102px; margin-top: 500px; margin-left: 0px;">
+        </div>
+
+    </form>
+</body>
+</html>

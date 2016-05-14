@@ -1,0 +1,5 @@
+F:\1毕业各项事\陈建花毕设\TicketManage\DBCommon\bin\DBCommon.dll
+F:\1毕业各项事\陈建花毕设\TicketManage\DBCommon\bin\DBCommon.pdb
+F:\1毕业各项事\陈建花毕设\TicketManage\DBCommon\obj\Debug\DBCommon.csprojResolveAssemblyReference.cache
+F:\1毕业各项事\陈建花毕设\TicketManage\DBCommon\obj\Debug\DBCommon.dll
+F:\1毕业各项事\陈建花毕设\TicketManage\DBCommon\obj\Debug\DBCommon.pdb

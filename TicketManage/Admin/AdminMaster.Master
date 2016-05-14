@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="MeiXiangLe.AdminPages.AdminMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>船票票务信息管理系统</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #left {
+            width: 15%;
+            height: 750px;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            background-image: url("../Images/admin/left.jpg");
+            background-size: 200px 600px;
+        }
+
+        #left_1 {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 120px;
+            font-size: medium;
+        }
+
+        #left_2 {
+            position: absolute;
+            top: 60px;
+            left: 15px;
+            font-size: larger;
+        }
+
+        #right {
+            position: relative;
+            top: -730px;
+            left: 18%;
+            width: 80%;
+        }
+
+        /*未访问的链接*/
+        A:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        /*已访问的链接*/
+        A:visited {
+            color: black;
+            text-decoration: none;
+        }
+
+        /*当有鼠标悬停在链接上*/
+        A:hover {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        /*被选择的链接*/
+        A:active {
+            color: #CCFF99;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+
+        <div>
+            <asp:Image ID="Image1" runat="server" ImageUrl="../Images/admin/head.jpg" Height="100px"
+                Width="100%" />
+        </div>
+        <div id="left">
+            <asp:Panel ID="panl_generalAdmin" runat="server" Font-Size="Large">
+                <div id="left_1">
+                    管理员，您好！
+                <br />
+                    敬请使用
+                </div>
+
+                <br />
+                <br />
+                <hr size="1 " style="border: 1px dotted #0099FF" width="95%" />
+                <br />
+                <div id="left_2">
+                    <asp:Label ID="lbRouteManage" runat="server" Text="Label"><a href="RouteManage.aspx">航线管理</a>
+                    </asp:Label>
+                    <br />
+                    <asp:Label ID="lbFlightManage" runat="server" Text="Label"><a href="FlightManage.aspx">航班管理</a>
+                    </asp:Label>
+                    <br />
+                    <asp:Label ID="lbFlightAndDate" runat="server" Text="Label"><a href="FlightAndDate.aspx">航班日程管理</a>
+                    </asp:Label>
+                    <br />
+                    <asp:Label ID="lbFlightDetailStationManage" runat="server" Text="Label"><a href="FlightDetailStationManage.aspx">航班站点管理</a>
+                    </asp:Label>
+                    <br />
+                    <asp:Label ID="Label1" runat="server" Text="Label"><a href="TicketOrderManage.aspx">船票订单管理</a>
+                    </asp:Label>
+                    <br />
+                    <asp:Label ID="lbNewsManage" runat="server" Text="Label"><a href="NewsManage.aspx">新闻管理</a>
+                    </asp:Label>
+                    <br />
+                    <asp:Label ID="lbReportManage" runat="server" Text="Label"><a href="ReportManage.aspx">报表管理</a>
+                    </asp:Label>
+                    <br />
+                    <asp:Button ID="btnLogOut" runat="server" OnClick="btnLogOut_Click" Text="注销" />
+                    <br />
+                </div>
+
+            </asp:Panel>
+        </div>
+
+        <div>
+        </div>
+        <div id="right">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketManage", "TicketManage\TicketManage.csproj", "{8837B8B4-AABF-48BD-8CAE-0FA39871263B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBCommon", "DBCommon\DBCommon.csproj", "{04ABF876-A27B-4CDF-97FE-4FC674DBD288}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{B070C9DA-B2C5-4180-A90C-1A07804BC9A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8837B8B4-AABF-48BD-8CAE-0FA39871263B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8837B8B4-AABF-48BD-8CAE-0FA39871263B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8837B8B4-AABF-48BD-8CAE-0FA39871263B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8837B8B4-AABF-48BD-8CAE-0FA39871263B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04ABF876-A27B-4CDF-97FE-4FC674DBD288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04ABF876-A27B-4CDF-97FE-4FC674DBD288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04ABF876-A27B-4CDF-97FE-4FC674DBD288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04ABF876-A27B-4CDF-97FE-4FC674DBD288}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B070C9DA-B2C5-4180-A90C-1A07804BC9A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B070C9DA-B2C5-4180-A90C-1A07804BC9A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B070C9DA-B2C5-4180-A90C-1A07804BC9A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B070C9DA-B2C5-4180-A90C-1A07804BC9A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
