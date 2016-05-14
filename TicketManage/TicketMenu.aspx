@@ -64,8 +64,8 @@
                 <td><%# Eval("TripTime")%></td>
                 <td><%# Eval("ShipTypeName")%></td>
                 <td><%# Eval("LevelOneSeatNum")%> (¥<%=CurrentOnePrice %>)</td>
-                <td><%# Eval("LevelTwoSeatNum") %></td>               
-                <td><%# Eval("LevelNoSeatNum")%></td>
+                <td><%# Eval("LevelTwoSeatNum") %> (¥<%=CurrentTwoPrice %>)</td>               
+                <td><%# Eval("LevelNoSeatNum")%> (¥<%=CurrentNoPrice %>)</td>
                 <td>
 <%--                    <a href="Index.aspx?FlightDetailStationId=<%# Eval("FlightDetailStationId") %>" target="main">购买</a>--%>
                  <asp:LinkButton runat="server" CssClass="butnAdd"

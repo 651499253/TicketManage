@@ -19,11 +19,11 @@ namespace TicketManage
             {
                 //if (Session["UserId"] != null)
                 //{
-                    //string UserId = Session["UserId"].ToString();
-                    BindDDLStartPlace();
-                    BindDDLDestination();
-                    BindDDLShipType();
-                    //BindDDLSeatType();
+                //string UserId = Session["UserId"].ToString();
+                BindDDLStartPlace();
+                BindDDLDestination();
+                BindDDLShipType();
+                //BindDDLSeatType();
                 //}
                 //else
                 //{
@@ -33,6 +33,17 @@ namespace TicketManage
         }
 
         public double CurrentOnePrice
+        {
+            get;
+            set;
+        }
+
+        public double CurrentTwoPrice
+        {
+            get;
+            set;
+        }
+        public double CurrentNoPrice
         {
             get;
             set;
@@ -66,16 +77,6 @@ namespace TicketManage
             this.DDLShipType.DataBind();
         }
 
-        ////绑定座位类型下拉框
-        //private void BindDDLSeatType()
-        //{
-        //    object AllSeatType = tickMenuBll.GetAllSeatTypes();
-        //    this.DDLSeatType.DataSource = AllSeatType;
-        //    this.DDLSeatType.DataTextField = "SeatTypeName"; //实际显示的值
-        //    this.DDLSeatType.DataValueField = "SeatTypeId";//用来取值的
-        //    this.DDLSeatType.DataBind();
-        //}
-
 
         //选择船舶类型后触发事件
         protected void DDLShipType_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,7 +95,9 @@ namespace TicketManage
                 DataTable dtone = tickMenuBll.GetTicketByparmsAndShipName(StartPlace, Destination, startData, ShipTypeName);
                 if (dtone.Rows.Count > 0)
                 {
-                    CurrentOnePrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.5;
+                    CurrentOnePrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.5 * 1.2;
+                    CurrentTwoPrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.5 * 1;
+                    CurrentNoPrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.5 * 0.8;
                 }
             }
             if (ShipTypeName == "快艇")
@@ -103,20 +106,24 @@ namespace TicketManage
                 DataTable dtone = tickMenuBll.GetTicketByparmsAndShipName(StartPlace, Destination, startData, ShipTypeName);
                 if (dtone.Rows.Count > 0)
                 {
-                    CurrentOnePrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.2;
+                    CurrentOnePrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.2 * 1.2;
+                    CurrentTwoPrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.2 * 1;
+                    CurrentNoPrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.2 * 0.8;
                 }
             }
             if (ShipTypeName == "普通游轮")
             {
 
                 DataTable dtone = tickMenuBll.GetTicketByparmsAndShipName(StartPlace, Destination, startData, ShipTypeName);
-                if (dtone.Rows.Count>0)
+                if (dtone.Rows.Count > 0)
                 {
-                    CurrentOnePrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.0;
+                    CurrentOnePrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.0 * 1.2;
+                    CurrentTwoPrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.0 * 1;
+                    CurrentNoPrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.0 * 0.8;
                 }
             }
 
-             
+
 
         }
 
@@ -151,16 +158,18 @@ namespace TicketManage
                 this.LVTicketList.DataBind();
                 return;
             }
-
+            //默认是大型游轮
             string ShipTypeName = DDLShipType.SelectedItem.ToString();
 
             DataTable dt = tickMenuBll.GetTicketByparmsAndShipName(StartPlace, Destination, startData, ShipTypeName);
 
-            
+
             //DataTable dt = tickMenuBll.GetTicketByparm(StartPlace, Destination, startData);
             this.LVTicketList.DataSource = dt;
             this.LVTicketList.DataBind();
-            CurrentOnePrice =double.Parse(dt.Rows[0]["Price"].ToString())*1.5;
+            CurrentOnePrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.5 * 1.2;
+            CurrentTwoPrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.5 * 1;
+            CurrentNoPrice = double.Parse(dt.Rows[0]["Price"].ToString()) * 1.5 * 0.8;
 
 
             //Response.Write(startData + StartPlace + Destination);

@@ -44,6 +44,12 @@ namespace TicketManage
             }
         }
 
+        public double TotalPrice
+        {
+            get;
+            set;
+        }
+
         //绑定座位类型下拉框
         private void BindDDLSeatType()
         {
@@ -194,6 +200,7 @@ namespace TicketManage
 
                 double OriPrice = double.Parse(dt.Rows[0]["Price"].ToString());
                 double TicketPrice = OriPrice * BaggageMultiple * SeatTypeMultiple * ShipTypeMultiple * UserTypeDiscount;
+                //this.lbtotalPrice.Text = TicketPrice.ToString();
 
                 int CreateTicketResult = tickCreateBll.CreateTicket(TicketOrderNum, SeatTypeName, ShipTypeName, OrderTime, UserId, PassengerId, TicketPrice.ToString(), FlightName, BaggageId, FlightDate, NowStation, VoyageTime, AchieveName, AchieveTime, TripTime);
                 if (CreateTicketResult == 1)
